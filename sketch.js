@@ -21,7 +21,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(800,400);
+  createCanvas(windowWidth,windowHeight);
   
   backgr=createSprite(0,0,800,400);
   backgr.addImage(backImage);
@@ -72,7 +72,7 @@ function draw() {
         default: break;
     }
   
-    if(keyDown("space") ) {
+    if((if touches.lenght>0||keyDown("space")) && player.y >= height-120 ) {
       player.velocityY = -12;
     }
     player.velocityY = player.velocityY + 0.8;
